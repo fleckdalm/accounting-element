@@ -6,16 +6,16 @@ Element wrapper for the [accounting.js](http://openexchangerates.github.io/accou
 
 
 #### Example:
+      thousand="."
+      decimal=","></accounting-element> -> €500.000,00
+
+    <accounting-element format-numb
 
     <accounting-element formatMoney="1234566"></accounting-element> -> $1,234,566.00
 
     <accounting-element
       format-money="500000"
-      symbol="€"
-      thousand="."
-      decimal=","></accounting-element> -> €500.000,00
-
-    <accounting-element format-number="11987612"></accounting-element> -> 11,987,612
+      symbol="€"er="11987612"></accounting-element> -> 11,987,612
 
     <accounting-element to-fixed="22987612.1234" precision="2"></accounting-element> -> 22987612.12
 
@@ -121,6 +121,11 @@ Element wrapper for the [accounting.js](http://openexchangerates.github.io/accou
       formatOpt: {
         type: String,
         value: '%s%v'
+      },
+      
+      formattedValue: {
+          type: String,
+          notify: true
       }
     },
     observers: [
@@ -196,6 +201,7 @@ Element wrapper for the [accounting.js](http://openexchangerates.github.io/accou
      */
     _render: function(value) {
       this.$.content.innerHTML = value;
+      this.formattedValue = value;
     }
 
   });
