@@ -5,6 +5,7 @@ Element wrapper for the [accounting.js](http://openexchangerates.github.io/accou
 ## Documentation and Demo
 
 See the [component page](http://Granze.github.io/accounting-element) for more information.
+NOTE: Forked in order to add a "formattedValue" property for data binding
 
 ## Installation
 
